@@ -1,0 +1,38 @@
+﻿@{
+    //Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-12">
+
+
+
+            @foreach (var v in Model)
+            {
+                <div class="col-md-6">
+                    <div class="panel img-rounded  " style="margin: 40px; background: #BFDAE1; ">
+                        <div class="panel-body img-rounded" style="background: #80B5BD;"><p><h5>Name: @v.Name </h5></p></div>
+                        <img src="/ProductData/img_@(v.Id).jpg" class=" img-rounded align-self" style=" height:400px; width:300; ">
+                        <p>Brand: @v.Brand</p>
+                        <p><h4>Price :Rs @v.Price </h4></p>
+                        <p>Category : @v.Category </p>
+                        <p>Brand : @v.Brand </p>
+                        <p>Description :@v.Description</p>
+
+                  @if (Session["User"] != null)
+                    {      <a href="/HomePage/Add/@v.Id"> <button type="submit" class="btn btn-success">Add To Cart</button></a>
+                  }</div>
+                </div>
+            }
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    <title>thenewboston</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    
+    <link rel="stylesheet"  href="bootstrap.css" />
+    <script src="botstrap.js"></script>
+   
+
+    </div>
+    <div>
+        
+        <nav class="navbar navbar-default" role="navigation" style="background-color: ##797979; rotation-point: 10% 25 %; ">
+            <div class="navbar-header ">
+                <a class="navbar-brand" href="/HomePage">Shop it dot com</a>
+            </div>
+            <div>
+                <ul class="nav navbar-nav">
+                    <li class="action"><a href="/HomePage">Home</a></li>
+                    <li class="dropdown ">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            Categories
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/Categories/Mens ">Mens</a></li>
+                            <li><a href="/Categories/Womens ">Womens</a></li>
+                            <li><a href="/Categories/Child">Child</a></li>
+                            
+                            
+
+
+                        </ul>
+                    </li>
+
+
+
+                    @if(Session["User"]==null)
+                    {<li><a href="/Sign/SignIn"><div class="pull-right">SignIn</div></a></li>
+                    <li><a href="/Sign/SignUp">SignUp</a></li>
+                    
+                    }
+                    
+                    @if (Session["User"] != null)
+                    {
+                    <li><a href="/Sign/LogOut"><div class="pull-right">Log Out</div></a></li>
+                    <li class="action"><a href="/HomePage/ShoppingCart">Shopping Cart</a></li>
+                    }
+                    
+                </ul>
+
+                <form class=" navbar-form navbar-left pull-right" action="/Home/Search" method="post">
+
+                    <div class="form-group ">
+                        <input type="text" class="form-control" placeholder="Search By Name,Brand,Category" name="Search" />
+                    </div>
+                    <button type="submit" class="btn btn-success">Search</button>
+                </form>
+            </div>
+        </nav>
+            </div>
+            @Scripts.Render("~/bundles/modernizr")
+</head>
+<body style="background-color:#0b3b4f;">
+    @RenderBody()
+
+    @RenderSection("d1", required: false)
+
+    <br />
+    <br />
+    <br />
+    <div class="pull-left">
+        <a href="/HomePage">Home</a>
+        <span>|</span>
+        <a href="/HomePage/ContactUs">Contact</a>
+        <span>|</span>
+        <a href="/HomePage/AboutUs">About Us</a>
+
+    </div>
+
+    <div class="right pull-right">
+        <p>Copyright © 2016 shopit.com. All rights reserved.</p>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

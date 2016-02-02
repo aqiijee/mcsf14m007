@@ -1,0 +1,37 @@
+﻿@{
+    //Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>UpdateProduct</title>
+</head>
+    <body background="/Images/i11.jpeg">
+        <div class="row" style="margin-top:3%;padding-left:300px;padding-right:100px">
+            <div class="container col-md-4" style="padding-top: 15px; padding-bottom: 10px; background-color: #337AB7; ">
+
+                <form action="/Admin/SaveUpdateProduct" enctype="multipart/form-data" method="post">
+                    <h1 style="font-family:monospace;color:whitesmoke">Update Product</h1><br />
+                    <label style="font-family:monospace;color:whitesmoke" for="Id">Id:</label>
+                    <input class="form-control" id="Id" name="Id" placeholder="Id" type="text" value="@Model.Id" /><br>
+                    <label for="Name" style="font-family:monospace;color:whitesmoke">Name:</label>
+                    <span class="field-validation-valid" data-valmsg-for="name" data-valmsg-replace="true"></span><input class="form-control" data-val="true" data-val-required="Fill this Field!" id="name" name="Name" placeholder="Product Name" type="text" value="@Model.Name" /><br>
+                    <label for="Desc" style="font-family:monospace;color:whitesmoke">Description:</label>
+                    <span class="field-validation-valid" data-valmsg-for="lname" data-valmsg-replace="true"></span><input class="form-control" data-val="true" data-val-required="Fill this Field!" id="Desc" name="Description" placeholder="Description" type="text" value="@Model.Description" /><br>
+                    <label for="Price" style="font-family:monospace;color:whitesmoke">Price:</label>
+                     <input class="form-control" id="Price" name="Price" placeholder="Price" type="text" value="@Model.Price" /><br>
+                    <label for="Category" style="font-family:monospace;color:whitesmoke">Category:</label>
+                    <input class="form-control" id="Category" name="Category" placeholder="Category" type="text" value="@Model.Category" /><br>
+                    <label for="Brand" style="font-family:monospace;color:whitesmoke">Brand:</label>
+                    <br /> <input class="form-control" id="Brand" name="Brand" placeholder="Brand" type="text" value="@Model.Brand" /><br>
+                    <label for="Image" style="font-family:monospace;color:whitesmoke">Image:</label>
+                    <input type="file" class="form-control" name="Image" id="Image"/><br>
+                    <input style="font-family:monospace" type="submit" value="Update" class="btn btn-success" />
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

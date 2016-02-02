@@ -1,0 +1,52 @@
+﻿@{
+    //Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ViewProducts</title>
+</head>
+<body>
+    <div class="container">
+        <h2>All Products</h2>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Price</th>
+
+                    <th>Description</th>
+                    <th>Brand</th>
+                    <th>Category</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var v in Model)
+                {
+
+                    <tr>
+                        <td>@v.Id</td>
+                        <td>@v.Name</td>
+                        <td>@v.Price</td>
+
+                        <td>@v.Description</td>
+                        <td>@v.Brand</td>
+                        <td>@v.Category</td>
+                        <td><a href="/Admin/DeleteProduct/@v.Id"> Delete</a>  </td>
+                        <td><a href="/Admin/UpdateProduct//@v.Id"> Update</a>  </td>
+                    </tr>
+                }
+
+
+
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
